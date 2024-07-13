@@ -2,16 +2,22 @@
 agp = "8.4.1"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
-junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.3"
 activityCompose = "1.9.0"
 composeBom = "2023.08.00"
+koin = "3.2.0"
+retrofit = "2.9.0"
+coil = "2.6.0"
+coroutines = "1.8.0"
+junit = "5.9.3"
+assertk = "0.26.1"
+mockK = "1.12.5"
+ktor = "2.3.12"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
@@ -24,8 +30,28 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+koin-core = {group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-android = {group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-androidx-compose = {group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+koin-test = {group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
+koin-test-junit = {group = "io.insert-koin", name = "koin-test-junit5", version.ref = "koin" }
+#retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+#gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+#ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+junit = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
+junit-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+junit-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit" }
+assertK = { group = "com.willowtreeapps.assertk", name = "assertk-jvm", version.ref = "assertk" }
+mockK = { group = "io.mockk", name = "mockk", version.ref = "mockK" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 

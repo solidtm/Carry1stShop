@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -51,6 +52,7 @@ android {
 
 dependencies {
 
+//    Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -59,7 +61,38 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+//    Dependency Injection
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+
+//    Networking
+//    implementation(libs.retrofit)
+//    implementation(libs.gson)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.android)
+
+//    Image loading
+    implementation(libs.coil.compose)
+
+//    Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
+
+//    Unit tests
     testImplementation(libs.junit)
+    testImplementation(libs.junit.params)
+    testRuntimeOnly(libs.junit.engine)
+    testImplementation(libs.assertK)
+    testImplementation(libs.mockK)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.koin.test.junit)
+
+//    UI tests
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
