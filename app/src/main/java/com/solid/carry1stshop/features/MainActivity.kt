@@ -1,4 +1,4 @@
-package com.solid.carry1stshop
+package com.solid.carry1stshop.features
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
