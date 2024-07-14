@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.kotlin.serialization)
+//    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -22,8 +22,19 @@ android {
     }
 
     buildTypes {
-        release {
+        debug{
+            isDebuggable = true
             isMinifyEnabled = false
+            isShrinkResources = false
+            android.buildFeatures.buildConfig = true
+            buildConfigField("boolean", "DEBUG", "true")
+//            buildConfigField(type = "String", name = "BASE_URL", value = "\"https://my-json-server.typicode.com\"")
+        }
+        release {
+            isMinifyEnabled = true
+            isDebuggable = false
+            isShrinkResources = true
+            buildConfigField("boolean", "DEBUG", "false")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -66,20 +77,28 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.androidx.navigation)
 
 //    Networking
-//    implementation(libs.retrofit)
-//    implementation(libs.gson)
-    implementation(libs.ktor.client.cio)
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    implementation(libs.ktor.android)
+    implementation(libs.retrofit)
+    implementation(libs.moshi)
+    implementation(libs.moshi.converter)
+    implementation(libs.okhttp3)
+    implementation(libs.logging)
+//    implementation(libs.ktor.client.cio)
+//    implementation(libs.ktor.client.core)
+//    implementation(libs.ktor.android)
+//    implementation(libs.ktor.serialization)
+//    implementation(libs.ktor.client.content.negotiation)
+//    implementation(libs.logback.classic)
+
 
 //    Image loading
     implementation(libs.coil.compose)
 
 //    Coroutines
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.navigation.compose)
 
 
 //    Unit tests
@@ -92,7 +111,6 @@ dependencies {
     testImplementation(libs.koin.test.junit)
 
 //    UI tests
-
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
