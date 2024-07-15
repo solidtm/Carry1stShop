@@ -25,40 +25,38 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 - Error Handling: Basic error dialogs are shown for network errors or failures.
 - Navigation: Simple navigation flow with two primary screens (Product List and Product Details).
 
-  Choices Around Plugins and 3rd Party Libraries
-## Tech Stack
+## Tech Stack - Choices Around Plugins and 3rd Party Libraries
 
+## Core Libraries:
+- 100% [Kotlin](https://kotlinlang.org/): Ensures modern language features and null safety.
+- 100% [Jetpack Compose](https://developer.android.com/jetpack/compose): Leverages the latest UI toolkit for Android, offering a declarative approach to UI development.
+- [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html): Simplifies asynchronous programming, making it easier to handle background tasks and manage concurrency.
+- [Kotlin Flow](https://kotlinlang.org/docs/flow.html): Used for reactive programming, handling streams of data efficiently.
 
-Core Libraries:
+## Dependency Injection:
+- [Koin](https://insert-koin.io/): A lightweight dependency injection framework for Kotlin. It simplifies the management of dependencies and allows for easy testing and configuration.
 
-100% Kotlin: Ensures modern language features and null safety.
-100% Jetpack Compose: Leverages the latest UI toolkit for Android, offering a declarative approach to UI development.
-Kotlin Coroutines: Simplifies asynchronous programming, making it easier to handle background tasks and manage concurrency.
-Kotlin Flow: Used for reactive programming, handling streams of data efficiently.
-Dependency Injection:
+## Networking:
+- [Retrofit](https://ktor.io/docs/getting-started-ktor-client.html): A type-safe HTTP client for Android and Java. It simplifies the process of making network requests and parsing the responses.
+- [OkHttp Client](https://square.github.io/okhttp/) (REST Client): A robust HTTP client that provides efficient HTTP requests.
+- [Moshi](https://github.com/square/retrofit/blob/trunk/retrofit-converters/moshi/README.md): A modern JSON library for Android and Java, used for parsing JSON into Kotlin objects and vice versa.
 
-Koin: A lightweight dependency injection framework for Kotlin. It simplifies the management of dependencies and allows for easy testing and configuration.
-Networking:
+## Image Loading:
+- [Gradle KTS](https://docs.gradle.org/current/userguide/kotlin_dsl.html): An image loading library for Android backed by Kotlin Coroutines. It is designed for asynchronous image loading and provides a simple API for image handling in Jetpack Compose.
+  
+## CI/CD:
+- [Gradle KTS](https://docs.gradle.org/current/userguide/kotlin_dsl.html): Uses Kotlin DSL for Gradle build scripts, offering better syntax highlighting, code completion, and type safety.
 
-Retrofit: A type-safe HTTP client for Android and Java. It simplifies the process of making network requests and parsing the responses.
-OkHttp Client: A robust HTTP client that provides efficient HTTP requests.
-Moshi: A modern JSON library for Android and Java, used for parsing JSON into Kotlin objects and vice versa.
-Image Loading:
+## Testing:
+- [JUnit 5](https://junit.org/junit5/): The latest version of the popular testing framework for Java and Kotlin.
+- [MockK](https://mockk.io/): A mocking library for Kotlin. It allows for creating mocks and stubs in a type-safe manner.
+- [AssertK](https://github.com/willowtreeapps/assertk/blob/main/README.md): A fluent assertion library for Kotlin, providing a more readable and expressive way to write assertions.
+- [Truth](https://truth.dev/): A library for testing, making assertions more readable and straightforward.
+- [Espresso](https://developer.android.com/training/testing/espresso): A UI testing framework for Android, used for writing concise and reliable UI tests.
+- [Koin test](https://insert-koin.io/docs/reference/koin-test/testing/): Extensions for testing Koin modules.
+- [Compose test](https://developer.android.com/develop/ui/compose/testing): Testing utilities for Jetpack Compose.
+- [Compose navigation test](https://developer.android.com/develop/ui/compose/navigation): Utilities for testing Jetpack Compose navigation flows.
 
-Coil: An image loading library for Android backed by Kotlin Coroutines. It is designed for asynchronous image loading and provides a simple API for image handling in Jetpack Compose.
-Continuous Integration/Continuous Deployment (CI/CD):
-
-Gradle KTS: Uses Kotlin DSL for Gradle build scripts, offering better syntax highlighting, code completion, and type safety.
-Testing:
-
-JUnit 5: The latest version of the popular testing framework for Java and Kotlin.
-MockK: A mocking library for Kotlin. It allows for creating mocks and stubs in a type-safe manner.
-AssertK: A fluent assertion library for Kotlin, providing a more readable and expressive way to write assertions.
-Truth: A library for testing, making assertions more readable and straightforward.
-Espresso: A UI testing framework for Android, used for writing concise and reliable UI tests.
-Koin Test: Extensions for testing Koin modules.
-Compose Test: Testing utilities for Jetpack Compose.
-Compose Navigation Test: Utilities for testing Jetpack Compose navigation flows.
 2. Performance Optimization Considerations
 Efficient Networking:
 
@@ -82,16 +80,6 @@ Dependency Injection:
 
 Koin: Simplifies dependency management, reducing the boilerplate code and improving the maintainability and performance of dependency resolution.
 
-
-### Core
-
-- 100% [Kotlin](https://kotlinlang.org/)
-- 100% [Jetpack Compose](https://developer.android.com/jetpack/compose)
-- [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
-- [Kotlin Flow](https://kotlinlang.org/docs/flow.html)
-- [Koin](https://insert-koin.io/) (DI)
-- [Jetpack Compose Navigation](https://developer.android.com/jetpack/compose/navigation)
-  
 
 ### Networking
 - [Retrofit](https://ktor.io/docs/getting-started-ktor-client.html) (Client)
