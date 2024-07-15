@@ -27,27 +27,27 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 
 ## Tech Stack - Choices Around Plugins and 3rd Party Libraries
 
-## Core Libraries:
+### Core Libraries:
 - 100% [Kotlin](https://kotlinlang.org/): Ensures modern language features and null safety.
 - 100% [Jetpack Compose](https://developer.android.com/jetpack/compose): Leverages the latest UI toolkit for Android, offering a declarative approach to UI development.
 - [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html): Simplifies asynchronous programming, making it easier to handle background tasks and manage concurrency.
 - [Kotlin Flow](https://kotlinlang.org/docs/flow.html): Used for reactive programming, handling streams of data efficiently.
 
-## Dependency Injection:
+### Dependency Injection:
 - [Koin](https://insert-koin.io/): A lightweight dependency injection framework for Kotlin. It simplifies the management of dependencies and allows for easy testing and configuration.
 
-## Networking:
+### Networking:
 - [Retrofit](https://ktor.io/docs/getting-started-ktor-client.html): A type-safe HTTP client for Android and Java. It simplifies the process of making network requests and parsing the responses.
 - [OkHttp Client](https://square.github.io/okhttp/) (REST Client): A robust HTTP client that provides efficient HTTP requests.
 - [Moshi](https://github.com/square/retrofit/blob/trunk/retrofit-converters/moshi/README.md): A modern JSON library for Android and Java, used for parsing JSON into Kotlin objects and vice versa.
 
-## Image Loading:
+### Image Loading:
 - [Gradle KTS](https://docs.gradle.org/current/userguide/kotlin_dsl.html): An image loading library for Android backed by Kotlin Coroutines. It is designed for asynchronous image loading and provides a simple API for image handling in Jetpack Compose.
   
-## CI/CD:
+### CI/CD:
 - [Gradle KTS](https://docs.gradle.org/current/userguide/kotlin_dsl.html): Uses Kotlin DSL for Gradle build scripts, offering better syntax highlighting, code completion, and type safety.
 
-## Testing:
+### Testing:
 - [JUnit 5](https://junit.org/junit5/): The latest version of the popular testing framework for Java and Kotlin.
 - [MockK](https://mockk.io/): A mocking library for Kotlin. It allows for creating mocks and stubs in a type-safe manner.
 - [AssertK](https://github.com/willowtreeapps/assertk/blob/main/README.md): A fluent assertion library for Kotlin, providing a more readable and expressive way to write assertions.
@@ -57,50 +57,28 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 - [Compose test](https://developer.android.com/develop/ui/compose/testing): Testing utilities for Jetpack Compose.
 - [Compose navigation test](https://developer.android.com/develop/ui/compose/navigation): Utilities for testing Jetpack Compose navigation flows.
 
-2. Performance Optimization Considerations
-Efficient Networking:
+## Performance Optimization Considerations
 
-OkHttp and Retrofit: These libraries are chosen for their efficiency in handling network requests. OkHttp supports connection pooling and HTTP/2, which reduces latency and saves resources.
-Caching: OkHttp’s caching mechanism is utilized to store responses and reuse them when possible, reducing the number of network calls.
-Image Loading:
+### Efficient Networking:
+- OkHttp and Retrofit: These libraries are chosen for their efficiency in handling network requests. OkHttp supports connection pooling and HTTP/2, which reduces latency and saves resources.
+- Caching: OkHttp’s caching mechanism is utilized to store responses and reuse them when possible, reducing the number of network calls.
 
-Coil: Chosen for its efficient handling of image loading, backed by Kotlin Coroutines. It ensures that images are loaded asynchronously, preventing UI blocking.
-Image Caching: Coil’s built-in caching mechanism is used to store loaded images, minimizing redundant network requests.
-Asynchronous Programming:
+### Image Loading:
+- Coil: Chosen for its efficient handling of image loading, backed by Kotlin Coroutines. It ensures that images are loaded asynchronously, preventing UI blocking.
+- Image Caching: Coil’s built-in caching mechanism is used to store loaded images, minimizing redundant network requests.
 
-Kotlin Coroutines and Flow: Used extensively to perform tasks asynchronously, ensuring that the main thread is not blocked, leading to a smoother user experience.
-Declarative UI with Jetpack Compose:
+### Asynchronous Programming:
+- Kotlin Coroutines and Flow: Used extensively to perform tasks asynchronously, ensuring that the main thread is not blocked, leading to a smoother user experience.
 
-Compose: Allows building UIs in a declarative manner, which helps in optimizing rendering performance. Compose efficiently updates the UI by only re-composing parts of the UI that have changed.
-LazyColumn: Utilized for displaying lists efficiently, only rendering items that are currently visible on the screen.
-Navigation:
+### Declarative UI with Jetpack Compose:
+- Compose: Allows building UIs in a declarative manner, which helps in optimizing rendering performance. Compose efficiently updates the UI by only re-composing parts of the UI that have changed.
+- LazyColumn: Utilized for displaying lists efficiently, only rendering items that are currently visible on the screen.
 
-Jetpack Compose Navigation: Used to manage navigation efficiently within the app, reducing overhead and complexity compared to traditional navigation components.
-Dependency Injection:
+### Navigation:
+- Jetpack Compose Navigation: Used to manage navigation efficiently within the app, reducing overhead and complexity compared to traditional navigation components.
 
-Koin: Simplifies dependency management, reducing the boilerplate code and improving the maintainability and performance of dependency resolution.
-
-
-### Networking
-- [Retrofit](https://ktor.io/docs/getting-started-ktor-client.html) (Client)
-- [OkHttp Client](https://square.github.io/okhttp/) (REST Client)
-- [Moshi](https://github.com/square/retrofit/blob/trunk/retrofit-converters/moshi/README.md) (JSON serialization)
-
-### Other
-- [Coil](https://coil-kt.github.io/coil/getting_started/) (Image loading)
-
-### CI/CD
-- [Gradle KTS](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
-
-### Testing
-- [JUnit 5](https://junit.org/junit5/)
-- [MockK](https://mockk.io/)
-- [AssertK](https://github.com/willowtreeapps/assertk/blob/main/README.md)
-- [Truth](https://truth.dev/)
-- [Espresso](https://developer.android.com/training/testing/espresso)
-- [Koin test](https://insert-koin.io/docs/reference/koin-test/testing/)
-- [Compose test](https://developer.android.com/develop/ui/compose/testing)
-- [Compose navigation test](https://developer.android.com/develop/ui/compose/navigation)
+### Dependency Injection:
+- Koin: Simplifies dependency management, reducing the boilerplate code and improving the maintainability and performance of dependency resolution.
 
 
 ## Project Requirements
