@@ -6,6 +6,24 @@ plugins {
 
 android {
     namespace = "com.solid.carry1stshop"
+
+/*   This was added to fix errors:
+     1. Test results were not received
+     2. MockK could not self-attach a jvmti agent to the current VM
+*/
+
+    testOptions {
+        unitTests {
+            all {
+                it.useJUnitPlatform()
+            }
+        }
+        packaging {
+            jniLibs {
+                useLegacyPackaging = true
+            }
+        }
+    }
     compileSdk = 34
 
     defaultConfig {
@@ -41,12 +59,17 @@ android {
             )
         }
     }
+    configurations {
+        androidTestImplementation {
+            this.exclude(group = "io.mockk", module = "mockk-agent-jvm")
+        }
+    }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -73,27 +96,20 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-//    Dependency Injection
+//    Koin
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
     implementation(libs.koin.androidx.navigation)
 
-//    Networking
+//    Retrofit
     implementation(libs.retrofit)
     implementation(libs.moshi)
     implementation(libs.moshi.converter)
     implementation(libs.okhttp3)
     implementation(libs.logging)
-//    implementation(libs.ktor.client.cio)
-//    implementation(libs.ktor.client.core)
-//    implementation(libs.ktor.android)
-//    implementation(libs.ktor.serialization)
-//    implementation(libs.ktor.client.content.negotiation)
-//    implementation(libs.logback.classic)
 
-
-//    Image loading
+//    Coil
     implementation(libs.coil.compose)
 
 //    Coroutines
@@ -101,7 +117,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
 
-//    Unit tests
+//    Testing
     testImplementation(libs.junit)
     testImplementation(libs.junit.params)
     testRuntimeOnly(libs.junit.engine)
@@ -109,8 +125,12 @@ dependencies {
     testImplementation(libs.mockK)
     testImplementation(libs.koin.test)
     testImplementation(libs.koin.test.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
 
-//    UI tests
+    androidTestImplementation(libs.mockK)
+    androidTestImplementation(libs.truth)
+    androidTestImplementation(libs.mock.android)
+    androidTestImplementation(libs.navigation.testing)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
