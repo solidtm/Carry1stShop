@@ -26,7 +26,7 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 
 ## Tech Stack - Choices Around Plugins and 3rd Party Libraries
 
-### Core Libraries:
+### Core:
 - 100% [Kotlin](https://kotlinlang.org/): Ensures modern language features and null safety.
 - 100% [Jetpack Compose](https://developer.android.com/jetpack/compose): Leverages the latest UI toolkit for Android, offering a declarative approach to UI development.
 - [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html): Simplifies asynchronous programming, making it easier to handle background tasks and manage concurrency.
