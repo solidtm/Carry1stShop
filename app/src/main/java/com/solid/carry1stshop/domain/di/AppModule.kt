@@ -12,6 +12,16 @@ import com.solid.carry1stshop.features.products.viewmodel.ProductViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
+/**
+ * Module definition for dependency injection.
+ *
+ * This module sets up the necessary dependencies for the product-related
+ * components in the application, including services, data sources, repositories,
+ * and view models.
+ *
+ * <p>This configuration uses the Koin library for dependency injection and
+ * defines singletons and view models required in the application.</p>
+ */
 val appModule = module {
     single<ProductService> {
         ProductServiceFactory.createApiService(BuildConfig.DEBUG)

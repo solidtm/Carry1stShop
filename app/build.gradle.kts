@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-//    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -46,7 +45,7 @@ android {
             isShrinkResources = false
             android.buildFeatures.buildConfig = true
             buildConfigField("boolean", "DEBUG", "true")
-//            buildConfigField(type = "String", name = "BASE_URL", value = "\"https://my-json-server.typicode.com\"")
+            buildConfigField(type = "String", name = "BASE_URL", value = "\"https://my-json-server.typicode.com\"")
         }
         release {
             isMinifyEnabled = true
