@@ -1,8 +1,9 @@
 package com.solid.carry1stshop.data.model
 
-import com.squareup.moshi.JsonClass
+import androidx.annotation.Keep
 
 object ProductDto {
+    @Keep
     data class Product(
         val id: Int,
         val name: String,
@@ -15,6 +16,7 @@ object ProductDto {
         val status: String
     )
 
+    @Keep
     data class GenericResponse(
         val success: Boolean?,
         val statusCode: Int?,
