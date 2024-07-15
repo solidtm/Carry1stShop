@@ -66,10 +66,8 @@ class ProductListScreenTest {
     }
     @Test
     fun testClickOnProductNavigatesToDetails() {
-        // Click product item
         composeTestRule.onNodeWithText("10 Lives").performClick()
 
-        // Verify navigation to details screen
         assertThat(navController.currentDestination?.route).isEqualTo(Screen.ProductDetails.route)
     }
 }
