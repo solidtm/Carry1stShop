@@ -11,9 +11,8 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 
 ### High-level view:
 
-- [Modular architecture](https://android-developers.googleblog.com/2022/09/announcing-new-guide-to-android-app-modularization.html)
-- [FP (Functional Programming)](https://www.toptal.com/android/functional-reactive-programming-part-1)
 - [MVVM (Model-View-ViewModel)](https://www.techtarget.com/whatis/definition/Model-View-ViewModel#:~:text=Model%2DView%2DViewModel%20(MVVM)%20is%20a%20software%20design,Ken%20Cooper%20and%20John%20Gossman.)
+- [FP (Functional Programming)](https://www.toptal.com/android/functional-reactive-programming-part-1)
 
 ## Usage
 - Home Screen: Displays a list of products fetched from a remote server.
