@@ -4,7 +4,7 @@
 
 
 
-Carry1stShop is a **simple e-commerce android app** written using 100% Jetpack Compose and Kotlin. It's designed to display the list of products with their name and prices and to display the details of each product in the list.
+Carry1stShop is an Android application designed to showcase a product catalog. It allows users to browse through a list of products and view more information about each product. The app is built entirely using Kotlin and Jetpack Compose for a modern, declarative UI approach.
 
 ## Architecture
 I strive to keep my architecture "perfect" by putting software-design and code quality first. 
@@ -15,7 +15,73 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 - [FP (Functional Programming)](https://www.toptal.com/android/functional-reactive-programming-part-1)
 - [MVVM (Model-View-ViewModel)](https://www.techtarget.com/whatis/definition/Model-View-ViewModel#:~:text=Model%2DView%2DViewModel%20(MVVM)%20is%20a%20software%20design,Ken%20Cooper%20and%20John%20Gossman.)
 
+## Usage
+- Home Screen: Displays a list of products fetched from a remote server.
+- Detail Screen: Shows detailed information about a selected product, including its image, name, price, and description.
+- Toolbar: Contains an action to refresh the product list.
+
+## Assumptions
+- Networking: Products are fetched from a RESTful API endpoint.
+- Error Handling: Basic error dialogs are shown for network errors or failures.
+- Navigation: Simple navigation flow with two primary screens (Product List and Product Details).
+
+  Choices Around Plugins and 3rd Party Libraries
 ## Tech Stack
+
+
+Core Libraries:
+
+100% Kotlin: Ensures modern language features and null safety.
+100% Jetpack Compose: Leverages the latest UI toolkit for Android, offering a declarative approach to UI development.
+Kotlin Coroutines: Simplifies asynchronous programming, making it easier to handle background tasks and manage concurrency.
+Kotlin Flow: Used for reactive programming, handling streams of data efficiently.
+Dependency Injection:
+
+Koin: A lightweight dependency injection framework for Kotlin. It simplifies the management of dependencies and allows for easy testing and configuration.
+Networking:
+
+Retrofit: A type-safe HTTP client for Android and Java. It simplifies the process of making network requests and parsing the responses.
+OkHttp Client: A robust HTTP client that provides efficient HTTP requests.
+Moshi: A modern JSON library for Android and Java, used for parsing JSON into Kotlin objects and vice versa.
+Image Loading:
+
+Coil: An image loading library for Android backed by Kotlin Coroutines. It is designed for asynchronous image loading and provides a simple API for image handling in Jetpack Compose.
+Continuous Integration/Continuous Deployment (CI/CD):
+
+Gradle KTS: Uses Kotlin DSL for Gradle build scripts, offering better syntax highlighting, code completion, and type safety.
+Testing:
+
+JUnit 5: The latest version of the popular testing framework for Java and Kotlin.
+MockK: A mocking library for Kotlin. It allows for creating mocks and stubs in a type-safe manner.
+AssertK: A fluent assertion library for Kotlin, providing a more readable and expressive way to write assertions.
+Truth: A library for testing, making assertions more readable and straightforward.
+Espresso: A UI testing framework for Android, used for writing concise and reliable UI tests.
+Koin Test: Extensions for testing Koin modules.
+Compose Test: Testing utilities for Jetpack Compose.
+Compose Navigation Test: Utilities for testing Jetpack Compose navigation flows.
+2. Performance Optimization Considerations
+Efficient Networking:
+
+OkHttp and Retrofit: These libraries are chosen for their efficiency in handling network requests. OkHttp supports connection pooling and HTTP/2, which reduces latency and saves resources.
+Caching: OkHttp’s caching mechanism is utilized to store responses and reuse them when possible, reducing the number of network calls.
+Image Loading:
+
+Coil: Chosen for its efficient handling of image loading, backed by Kotlin Coroutines. It ensures that images are loaded asynchronously, preventing UI blocking.
+Image Caching: Coil’s built-in caching mechanism is used to store loaded images, minimizing redundant network requests.
+Asynchronous Programming:
+
+Kotlin Coroutines and Flow: Used extensively to perform tasks asynchronously, ensuring that the main thread is not blocked, leading to a smoother user experience.
+Declarative UI with Jetpack Compose:
+
+Compose: Allows building UIs in a declarative manner, which helps in optimizing rendering performance. Compose efficiently updates the UI by only re-composing parts of the UI that have changed.
+LazyColumn: Utilized for displaying lists efficiently, only rendering items that are currently visible on the screen.
+Navigation:
+
+Jetpack Compose Navigation: Used to manage navigation efficiently within the app, reducing overhead and complexity compared to traditional navigation components.
+Dependency Injection:
+
+Koin: Simplifies dependency management, reducing the boilerplate code and improving the maintainability and performance of dependency resolution.
+
 
 ### Core
 
