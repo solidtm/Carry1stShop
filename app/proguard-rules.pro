@@ -63,15 +63,6 @@
 -keep class androidx.navigation.** { *; }
 -dontwarn androidx.navigation.**
 
-## General Android classes
-#-keepclassmembers class * extends android.app.Activity {
-#    public void *(android.view.View);
-#}
-#
-#-keepclassmembers class * extends androidx.fragment.app.Fragment {
-#    public void *(android.view.View);
-#}
-
 # Keep ViewModel classes
 -keep class androidx.lifecycle.ViewModel { *; }
 -keep class androidx.lifecycle.LiveData { *; }
