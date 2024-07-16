@@ -36,8 +36,8 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 - [Koin](https://insert-koin.io/): A lightweight dependency injection framework for Kotlin. It simplifies the management of dependencies and allows for easy testing and configuration.
 
 ### Networking:
-- [Retrofit](https://ktor.io/docs/getting-started-ktor-client.html): A type-safe HTTP client for Android and Java. It simplifies the process of making network requests and parsing the responses.
-- [OkHttp Client](https://square.github.io/okhttp/) (REST Client): A robust HTTP client that provides efficient HTTP requests.
+- [Retrofit](https://square.github.io/retrofit/): A type-safe HTTP client for Android. It simplifies the process of making network requests and parsing the responses.
+- [OkHttp](https://square.github.io/okhttp/) (REST Client): A robust HTTP client that provides efficient HTTP requests.
 - [Moshi](https://github.com/square/retrofit/blob/trunk/retrofit-converters/moshi/README.md): A modern JSON library for Android and Java, used for parsing JSON into Kotlin objects and vice versa.
 
 ### Image Loading:
