@@ -52,6 +52,7 @@ android {
             isDebuggable = false
             isShrinkResources = true
             buildConfigField("boolean", "DEBUG", "false")
+            buildConfigField(type = "String", name = "BASE_URL", value = "\"https://my-json-server.typicode.com\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

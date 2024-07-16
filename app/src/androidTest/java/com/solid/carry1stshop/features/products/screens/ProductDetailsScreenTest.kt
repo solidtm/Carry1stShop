@@ -59,7 +59,6 @@ class ProductDetailScreenTest {
 
     @Test
     fun testProductDetailsDisplayed() {
-        // Verify product details display
         composeTestRule.onNodeWithText("$1").assertIsDisplayed()
         composeTestRule.onNodeWithText("Ten Lives product bundle.").assertIsDisplayed()
     }
