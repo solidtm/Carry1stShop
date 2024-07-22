@@ -41,7 +41,7 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 - [Moshi](https://github.com/square/retrofit/blob/trunk/retrofit-converters/moshi/README.md): A modern JSON library for Android and Java, used for parsing JSON into Kotlin objects and vice versa.
 
 ### Image Loading:
-- [Gradle KTS](https://docs.gradle.org/current/userguide/kotlin_dsl.html): An image loading library for Android backed by Kotlin Coroutines. It is designed for asynchronous image loading and provides a simple API for image handling in Jetpack Compose.
+- [Coil](https://coil-kt.github.io/coil/): An image loading library for Android backed by Kotlin Coroutines. It is designed for asynchronous image loading and provides a simple API for image handling in Jetpack Compose.
   
 ### CI/CD:
 - [Gradle KTS](https://docs.gradle.org/current/userguide/kotlin_dsl.html): Uses Kotlin DSL for Gradle build scripts, offering better syntax highlighting, code completion, and type safety.
