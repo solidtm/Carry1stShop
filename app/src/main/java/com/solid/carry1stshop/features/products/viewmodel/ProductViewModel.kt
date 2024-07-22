@@ -23,7 +23,6 @@ class ProductViewModel(
     }
 
     fun fetchProducts(){
-        println("ProductViewModel fetchProducts called")
         viewModelScope.launch {
             repository.getProducts().collectLatest { result ->
                 when(result) {
